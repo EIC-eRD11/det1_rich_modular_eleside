@@ -24,18 +24,18 @@
             eic_rich  |                 mvy  |                     y coordinate of mother vertex  |   21   |                  Dd  
             eic_rich  |                 mvz  |                     z coordinate of mother vertex  |   22   |                  Dd  
             eic_rich  |               avg_t  |                                         Average t  |   23   |                  Dd  
-            eic_rich  |              nsteps  |                         number of steps for track  |   24   |                  Di  
-            eic_rich  |                in_x  |                        entrance global x position  |   25   |                  Dd  
-            eic_rich  |                in_y  |                        entrance global y position  |   26   |                  Dd  
-            eic_rich  |                in_z  |                        entrance global z position  |   27   |                  Dd  
-            eic_rich  |               in_px  |                        entrance global x position  |   28   |                  Dd  
-            eic_rich  |               in_py  |                        entrance global y position  |   29   |                  Dd  
-            eic_rich  |               in_pz  |                        entrance global z position  |   30   |                  Dd  
-            eic_rich  |                in_t  |                                     entrance time  |   31   |                  Dd  
-            eic_rich  |               out_x  |                            exit global x position  |   32   |                  Dd  
-            eic_rich  |               out_y  |                            exit global y position  |   33   |                  Dd  
-            eic_rich  |               out_z  |                            exit global z position  |   34   |                  Dd  
-            eic_rich  |              out_px  |                            exit global x position  |   35   |                  Dd  
-            eic_rich  |              out_py  |                            exit global y position  |   36   |                  Dd  
-            eic_rich  |              out_pz  |                            exit global z position  |   37   |                  Dd  
-            eic_rich  |               out_t  |                                         exit time  |   38   |                  Dd  
+            eic_rich  |               in_px  |                                       entrance px  |   24   |                  Dd  
+            eic_rich  |               in_py  |                                       entrance py  |   25   |                  Dd  
+            eic_rich  |               in_pz  |                                       entrance pz  |   26   |                  Dd  
+            eic_rich  |                in_x  |                        entrance global x position  |   27   |                  Dd  
+            eic_rich  |                in_y  |                        entrance global y position  |   28   |                  Dd  
+            eic_rich  |                in_z  |                        entrance global z position  |   29   |                  Dd  
+            eic_rich  |                in_t  |                                     entrance time  |   30   |                  Dd  
+            eic_rich  |              out_px  |                                           exit px  |   31   |                  Dd  
+            eic_rich  |              out_py  |                                           exit py  |   32   |                  Dd  
+            eic_rich  |              out_pz  |                                           exit pz  |   33   |                  Dd  
+            eic_rich  |               out_x  |                            exit global x position  |   34   |                  Dd  
+            eic_rich  |               out_y  |                            exit global y position  |   35   |                  Dd  
+            eic_rich  |               out_z  |                            exit global z position  |   36   |                  Dd  
+            eic_rich  |               out_t  |                                         exit time  |   37   |                  Dd  
+            eic_rich  |              nsteps  |                                   number of steps  |   38   |                  Di  

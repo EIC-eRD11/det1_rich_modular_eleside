@@ -57,4 +57,16 @@ $configuration{"variation"} = "Original";
 require "det1_rich_modular_eleside_geometry.pl";
 det1_rich_modular_eleside();
 
+#materials
+require "det1_rich_modular_eleside_materials.pl";
+
+#mirror
+require "det1_rich_modular_eleside_mirrors.pl";
+
+#hit
+require "eic_rich_hit.pl";
+
+# banks
+require "eic_rich_bank.pl";
+
 
