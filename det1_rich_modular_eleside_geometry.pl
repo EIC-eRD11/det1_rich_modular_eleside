@@ -40,6 +40,8 @@ sub det1_rich_modular_eleside
 	return 0;
     }
 
+    open(my $file, '>', 'mRICH_coordinate.txt');                       #for later use in analysis
+    print $file "id_i\tid_j\tx\ty\tz\trotation_x\trotation_y\n";
 #------------------------ set variables --------------------------#
 
     my $i; my $j;
@@ -54,17 +56,18 @@ sub det1_rich_modular_eleside
     $deltaPhi=2*atan($halfWidth/$rinner);
     $n=floor(2*$phi_max/$deltaPhi);
     
-    if ($n%2==0) { $angle_max=($n/2)*$deltaPhi-$deltaPhi/2; }               #make the wall symmetric
-    else{ $angle_max=(($n-1)/2)*$deltaPhi; }
- 
+    #if ($n%2==0) { $angle_max=($n/2)*$deltaPhi-$deltaPhi/2; }               #make the wall symmetric
+    #else{ $angle_max=(($n-1)/2)*$deltaPhi; }
+    $angle_max=($n/2)*$deltaPhi-$deltaPhi/2;
+
 #----- find (x,y,z) and (theta, phi), then build each module -----#
 
     $i=0;
-    for ($phi_x=-$angle_max;$phi_x<$angle_max;$phi_x=$phi_x+$deltaPhi) {
+    for ($phi_x=-$angle_max;$phi_x<=$angle_max+0.001;$phi_x=$phi_x+$deltaPhi) {
 	$x=($rinner+$halfLength)*sin($phi_x);
 	
 	$j=0;
-	for ($phi_y=-$angle_max;$phi_y<$angle_max;$phi_y=$phi_y+$deltaPhi) {
+	for ($phi_y=-$angle_max;$phi_y<=$angle_max+0.001;$phi_y=$phi_y+$deltaPhi) {
 	    
 	    $y=($rinner+$halfLength)*sin($phi_y);
 	    $z=-sqrt(($rinner+$halfLength)**2-$x**2-$y**2);
@@ -85,14 +88,16 @@ sub det1_rich_modular_eleside
 # 	    print"$i, $j, name=$name\n";	    
 	    $count++;	    
 	    modular_rich($name,$x,$y,$z,$rotX,$rotY,$count,"$DetectorName\_0\_0");
-	    
+	    print $file "$i\t$j\t$x\t$y\t$z\t$rotX\t$rotY\n";
+
 	    $j++;
 	}
-	print"column $i, $j modules built.\n";
 	$i++;
     }
     print"----------------------------------------------\n";
     print"total $count modules are built.\n";
+
+    close $file;
 }
 
 #---------------------------------------------------------------------#
