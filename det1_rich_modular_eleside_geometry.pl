@@ -41,7 +41,7 @@ sub det1_rich_modular_eleside
     }
 
     open(my $file, '>', 'mRICH_coordinate.txt');                       #for later use in analysis
-    print $file "id_i\tid_j\tx\ty\tz\trotation_x\trotation_y\n";
+    print $file "count\tid_i\tid_j\tx\ty\tz\trotation_x\trotation_y\n";
 #------------------------ set variables --------------------------#
 
     my $i; my $j;
@@ -88,7 +88,8 @@ sub det1_rich_modular_eleside
 # 	    print"$i, $j, name=$name\n";	    
 	    $count++;	    
 	    modular_rich($name,$x,$y,$z,$rotX,$rotY,$count,"$DetectorName\_0\_0");
-	    print $file "$i\t$j\t$x\t$y\t$z\t$rotX\t$rotY\n";
+	    #print $file "$count\t$i\t$j\t$x\t$y\t$z\t$rotX\t$rotY\n";
+	    printf $file "$count\t$i\t$j\t%.6f\t%.6f\t%.6f\t%.6f\t%.6f\n",$x,$y,$z,$rotX,$rotY;
 
 	    $j++;
 	}

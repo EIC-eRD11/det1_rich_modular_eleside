@@ -236,12 +236,12 @@ sub modular_rich()
     $detector{"identifiers"} = "no";
     print_det(\%configuration, \%detector);
 
-    build_foamHolder($myName,$count,$original);
+    #build_foamHolder($myName,$count,$original);
     build_aerogel($myName,$count,$original);
-    build_lens($myName,$count,$original);
+    #build_lens($myName,$count,$original);
     build_photondet($myName,$count,$original);
-    build_mirrors($myName,$count,$original);
-    build_readout($myName,$count,$original);
+    #build_mirrors($myName,$count,$original);
+    #build_readout($myName,$count,$original);
 
 }
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
@@ -326,6 +326,7 @@ sub build_aerogel()
     $detector{"sensitivity"} = "$hittype";
     $detector{"hit_type"}    = "$hittype";
     my $id=2000000+$_[1]*100000;
+    #if ($_[1]>130) {print"count=$_[1],  id=$id\n";}
     $detector{"identifiers"} = "id manual $id";
     print_det(\%configuration, \%detector);
 }
@@ -529,7 +530,7 @@ sub build_photondet()
     for (my $i=1;$i<5;$i++) {
 	#--------------------------------------------------------#
 	# change quandrant                                                                                                    
-	if ($i==0) {
+	if ($i==1) {
 	    $photondet_x=$last_x;
 	    $photondet_y=$last_y;
 	}
@@ -582,6 +583,7 @@ sub build_photondet()
 	$detector{"sensitivity"} = "$hittype";
 	$detector{"hit_type"}    = "$hittype";
 	my $id=2000000+$_[1]*200000+$i*10000;
+	#if ($_[1]>130) {print"count=$_[1] , i=$i, id=$id\n";}
 	$detector{"identifiers"} = "id manual $id";
 	print_det(\%configuration, \%detector);
 	
