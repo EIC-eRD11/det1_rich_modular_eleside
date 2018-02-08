@@ -57,6 +57,9 @@ $configuration{"variation"} = "Original";
 require "det1_rich_modular_eleside_geometry.pl";
 det1_rich_modular_eleside();
 
+require "det1_rich_modular_eleside_virtualplane.pl";
+det1_rich_modular_eleside_virtualplane();
+
 #materials
 require "det1_rich_modular_eleside_materials.pl";
 
